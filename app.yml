@@ -1,0 +1,21 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: fastapi
+spec:
+  components:
+    - name: fastapi-frontend
+      type: webservice
+      properties:
+        image: shivangshandilya/napptive_hackathon:VERSION # container image name
+        ports:
+        - port: 80
+          expose: true
+        cpu: "0.5" # (Optional) Define the requested CPU.
+        memory: 256Mi
+      traits:
+        - type: napptive-ingress
+          properties:
+            name: fastapi-ingress # (Optional) endpoint name 
+            port: 80 # (Required) port  where the service is listening for incomming connections.
+            path: / # (Required) path to be exposed
