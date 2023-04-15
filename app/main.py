@@ -1,10 +1,8 @@
 from fastapi import FastAPI
 
-import os
-
-app = FastAPI()
+app = FastAPI(title="FastAPI, Docker, and Traefik")
 
 
 @app.get("/")
 def read_root():
-    return {"Hello": f"From: {os.environ.get('NAME','DEFAULT_ENV')}"}
+    return {"hello": "world"}
