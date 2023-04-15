@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the repository from GitHub
-                git 'https://github.com/ShivangShandilya/fastapi'
+                git 'https://github.com/ShivangShandilya/fastapi.git'
             }
         }
         stage('Build Docker Image') {
